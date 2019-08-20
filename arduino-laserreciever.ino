@@ -3,15 +3,15 @@
 const byte rxPin = 3;
 const byte txPin = 2; // Reciever is connected to pin 3
 
-SoftwareSerial mySerial (rxPin, txPin);
+SoftwareSerial mySerial (rxPin, txPin, true);
 
 void setup() {
   Serial.begin(9600);
-  mySerial.begin(300);
+  mySerial.begin(600);
   mySerial.listen();
 
   while(true) {
-    if(mySerial.available()) {
+    while(mySerial.available()) {
       Serial.write(mySerial.read());
     }
   }
@@ -19,8 +19,5 @@ void setup() {
 }
 
 
-
 // loop is too slow
-void loop() {
-  
-}
+void loop() {}
