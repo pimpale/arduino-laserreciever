@@ -7,7 +7,7 @@ SoftwareSerial mySerial (rxPin, txPin, true);
 
 void setup() {
   Serial.begin(9600);
-  mySerial.begin(600);
+  mySerial.begin(300);
   mySerial.listen();
 
   while(true) {
